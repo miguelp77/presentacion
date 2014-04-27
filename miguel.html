@@ -182,27 +182,7 @@
 
 					<section data-transition="linear" data-background="#00606d">
 						<h2>Apache+PHP+MySQL</h2>
-						<br>
-						<small style="text-align: justify;">La generación de páginas web dinamicas se realiza tras la interpretación de los archivos de código PHP albergardos en el servidor.</small>
-						<br>
-						<br>
-						<ul style="color:#e3e1e2;">
-							<li>
-								Linux <br /> 
-								<small class="fragment roll-in">Sistema operativo de software libre. Distribución Ubuntu orientada al usuario medio. Gestor de paquetes que facilitan la instalación de distintas aplicaciones.</small>
-							</li>
-							<li>
-								Apache <br />
-								<small class="fragment roll-in">Servidor web de código abierto. Atiende las peticiones HTTP entre el cliente y el servidor.</small>
-							</li>
-							<li>
-								MySQL<br />
-								<small class="fragment roll-in">Base de datos relacional de software libre. Relaciones entre tablas. Muy rápida en operaciones de lectura.</small>
-							</li>
-							<li>PHP<br>
-								<small class="fragment roll-in">Perl o Python. El servidor web interpreta el código y genera una página web con el resultado.</small>
-							</li>
-						</ul>
+						<img src="images/php.png" alt="">
 						<hr>
 						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
 							Miguel Ángel Paniagua García-Baquero
@@ -210,23 +190,50 @@
 						<aside class="notes">
 						</aside>
 					</section>
-		
-					<section>
-						<h2>Introducción</h2>
+
+					<section data-transition="linear" data-background="#00606d">
+						<h2>Apache+PHP+MySQL</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Estatico vs Dinamico</h4>
+						<small>Las páginas web estaticas siempre devuelven el mismo resultado HTML. Las páginas web dinamicas devuelven una respuesta HTML en función de unos parámetros recibidos desde cliente o variables dentro del servidor.</small>
+						</div>
 						<br>
-						<ul style="color:#e3e1e2;">
-							<li>Formación en línea<br>
-								<small class="fragment roll-in">Expasioón de los MOOC.<br>Mayor número de alumnos, cada uno va a un ritmo diferente. Para comprobar el seguimiento de la asignatura se realizan preguntas durante los videos y .</small>
-							</li>
-							<br>
-							<li>Formación presencial<br>
-								<small class="fragment roll-in">El temario de la asignatura se imparte a grupos en sesiones únicas. Siguiendo un orden. De manera en lo Los navegadores han evolucionado de ser aplicaciones desde donde consultar información con imágenes a ser el escenario desde donde podemos acceder a todo tipo de contenido. Siendo capaces de reproducir distintos formatos de representación.</small>
-							<br />
-							<li>Evaluación<br>
-								<small class="fragment roll-in">Único examen vs conjunto de pruebas. Los exámenes tipo test permiten al profesor hacer un seguimiento de la asimilación por parte de los alumnos. Herramienta de preparación para otras pruebas.</small>
-							</li>
-							<br>							
-						</ul>
+						<div style="color:#d3d1d2;">
+						<small style="text-align: justify;">El contenido dinamico es generado por el script PHP apoñandose en la base de datos para leer y almacenar la información a representar. Tras terminar la interpretación del script PHP el servidor Apache devuelve el resultado al cliente en forma de página HTML.</small>
+						</div>
+						<br>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+	
+					<section data-transition="linear">
+						<h2>HTML</h2>
+						<p>Hyper Text Markup Language</p>
+						<div style="color:#e3e1e2;text-align: justify;">
+							<small>Lenguaje de marcado para estructurar las páginas web. Identifican el contenido a representar, pero no el como se mostrará. Tiene una estructura en árbol conocida como DOM (Document Object Model). Cada sección es un nodo del árbol.</small>
+						</div>
+						<br>
+						<div class="fragment" style="color:#d3d1d2;text-align: justify;">
+						<h4>Estructura</h4>
+						<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    <meta charset="UTF-8">
+    <title>Titulo</title>
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;!-- Comentario --&gt;
+   		Contenido
+  &lt;/body&gt;
+&lt;/html&gt; 
+						</code></pre>
+						</div>
 						<hr>
 						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
 							Miguel Ángel Paniagua García-Baquero
@@ -236,6 +243,131 @@
 						</aside>
 					</section>
 
+					<section data-transition="linear" data-background="#00606d">
+						<h2>HTML</h2>
+						<p>Hyper Text Markup Language</p>
+						
+						<br>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Elementos (Etiquetas)</h4>
+						<pre><code>
+  &lt;head&gt;
+    <meta charset="UTF-8">
+    <title>Titulo</title>
+  &lt;/head&gt;
+						</code></pre>
+						<small>Elemento &lt;head&gt; conteniendo los elementos &lt;meta&gt; y &lt;title&gt;</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+					<section data-transition="linear">
+						<h2>HTML</h2>
+						<p>Hyper Text Markup Language</p>
+						
+						<br>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4>Atributos</h4>
+							<pre><code>
+  &lt;div id="identificador_unico" class="nombre de la clases"&gt;
+    <img src="ruta/imagen.jpg" alt="Texto alternativo">
+    <p>Parrafo</p>
+  &lt;/div&gt;
+							</code></pre>
+							<div>
+										
+								<small>Los elementos tienen varios atributos para poder identificarlos dentro del árbol DOM. El atributo <b style="color:#ffffff;">id</b> tiene que ser único dentro del documento. El atributo <b style="color:#ffffff;">class</b> especifica el tipo de clase de la etiqueta para la hoja de estilos.
+								</small>
+							</div>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							Notas
+						</aside>
+					</section>
+
+					<section data-transition="linear" data-background="#00606d">
+						<h2>HTML</h2>
+						<p>Hyper Text Markup Language</p>
+				
+						<br>
+						<div style="color:#d3d1d2;">
+							<img width="50%" src="images/one_way.jpg" alt="">
+							<p>No siempre hay una sola dirección.</p>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Notas
+						</aside>
+					</section>
+
+					<section data-transition="linear">
+						<h2>CSS</h2>
+						<p>Cascadind Style Sheets</p>
+						<div style="color:#e3e1e2;text-align: justify;">
+							<small>Hojas de estilo. Indican como se van a mostrar los elementos que forman el HTML. Se pueden declarar en archivos externos, indicando la ruta en la cabecera del documento. De manera puntual podemos cambiar algún parametro con el atributo <b style="color:#ffffff;">style</b> dentro del código HTML.</small>
+						</div>
+						<br>
+						<div class="fragment" style="color:#d3d1d2;text-align: justify;">
+							<h4>Ejemplo</h4>
+							<pre><code>
+ p.verde {color:white;text-align:center;background-color:#007700;}
+							</code></pre>
+							<div>
+								<small>Las etiquetas &lt;p&gt; de la clase verde dentro del documento HTML tendran color de la fuente blanco y fondo verde.</small>
+							</div>
+							<br>
+							<blockquote style="color:white;text-align:center;background-color:#007700;">Ejemplo</blockquote>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+					<section data-transition="linear" data-background="#00606d">
+						<h2>CSS</h2>
+						<p>Cascadind Style Sheets</p>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4>Sintaxis</h4>
+							<pre><code>
+selector.clase {
+	propiedad: valor;
+	propiedad: valor;
+}
+							</code></pre>
+						<br>
+							<small>
+							<i style="color:#ffffff;">selector</i> identifica al elemento HTML que va a modificar. El caracter ' <b style="color:#ffffff;">.</b> ' señala que se va nombrar un tipo de clase. <br>
+							Entre llaves <b style="color:#ffffff;">{ ... }</b> y separados por ' <b style="color:#ffffff;">;</b> ' se enumeran las propiedades que se modificarán y los valores que tomarán cuando el navegador muestre el HTML. <br>
+							Se pueden modficar todo tipo de parametros. Fuente, color de fondo, referencia de posicion, redondear esquinas de las cajas... <br>Mas información en: <a href="https://developer.mozilla.org/es/docs/CSS/Introducci%C3%B3n">Developer Mozilla - Introducción a CSS.</a> 
+							</small>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>					
 				</section>
 
 					<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">				
