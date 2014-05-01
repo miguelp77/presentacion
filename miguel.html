@@ -191,7 +191,7 @@
 						</aside>
 					</section>
 
-					<section data-transition="linear" data-background="#00606d">
+					<section data-transition="linear">
 						<h2>Apache+PHP+MySQL</h2>
 						<div style="color:#d3d1d2;text-align: justify;">
 						<h4>Estatico vs Dinamico</h4>
@@ -210,10 +210,165 @@
 						<aside class="notes">
 						</aside>
 					</section>
-	
+<!-- MySQL -->
+					<section data-transition="linear" data-background="#00606d">
+						<h2>MySQL</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Base de datos</h4>
+						<small>Es una base de datos relacional. Muy rápida en la lectura, no tanto en la escritura. Continua manteniendo licencia GNU GPL.</small><br>
+							<br>
+							<br>
+							<h4>Relaciones</h4>
+							<small>
+							Una base de datos puede tener diferentes instancias, para diferentes propositos cada una, con varias tablas donde se estructura las relaciones de los datos guardados. Las relaciones pueden ser: <br>
+							<br>
+							<ul>
+								<li><b>Uno a uno</b><span class="fragment"> - Un examen pertenece a un alumno</span></li>
+								<li><b>Uno a muchos</b><span class="fragment"> - Un pregunta tiene varias respuestas</span></li>
+								<li><b>Muchos a muchos</b><span class="fragment"> - Varios alumnos pertenecen a varios grupos</span></li>
+							</ul> 
+						</small>
+						</div>
+						<br>
+						<div style="color:#d3d1d2;">
+						<small style="text-align: justify;"></small>
+						</div>
+						<br>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- PHP -->
+					<section data-transition="linear">
+						<h2>PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4>Lenguaje de programación</h4>
+							<small>Lenguaje de programación interpretado. Software libre, no GNU. Diseñado para la programación web representando su resultado en HTML. Posibilidad de trabajar con datos de distintos motores de base de datos. Proporciona lógica a la aplicación.</small><br>
+							<br>
+						</div>
+						<div class="fragment">
+							<h4 style="text-align: justify;">Sintaxis</h4>
+							
+						<pre><code>
+&lt;div&gt;
+  &lt;?php
+    //Variables
+    $a = 1;
+    $b = 2;
+    echo $a + $b;
+  ?&gt;
+&lt;div&gt;							
+						</pre></code>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- Conexion PHP y MySQL -->
+					<section data-transition="linear" data-background="#00606d">
+						<h2>MySQL + PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Trabajar con datos</h4>
+						<small>Almacenar datos de diferentes origenes. Algunas veces necesitaremos tratar los datos antes de escribirlos e interpretarlos tras su lectura.</small>
+							<br>
+							<br>
+							<h4>Conexión</h4>
+						<pre><code>
+&lt;?php
+  $recurso = mysql_connect('servidor','usario','contraseña');
+?&gt;
+
+						</pre></code>							
+						</div>
+						<br>
+						<div style="color:#d3d1d2;">
+						<small style="text-align: justify;"></small>
+						</div>
+						<br>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- OperacionesPHP y MySQL -->
+					<section data-transition="linear">
+						<h2>MySQL + PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Operaciones CRUD</h4>
+						<small>Para operar con la base de datos utilizamos la sintaxis SQL. El comando mysql_query es fundamental para trabajar con MySQL. Las operaiones básicas serán: </small>
+						<br>
+						<pre><code>
+&lt;?php
+  //Escribir - Create
+  $escritura = mysql_query("INSERT INTO tabla (campo_1, campo_2) 
+    VALUES ('valor_1','valor_2')"); // Comillas simples para los valores
+  //Leer - Read
+  $lectura = mysql_query("SELECT campo FROM tabla WHERE campo_1 = valor");
+  //Actualizar - Update
+  $lectura = mysql_query("UPDATE tabla SET campo_1 = 'valor' 
+    WHERE condicion");
+  //Eliminar - Destroy
+  $lectura = mysql_query("DELETE FROM table WHERE condicion LIMIT 1");
+?&gt;
+
+						</pre></code>							
+						</div>
+					
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- Ejecucion PHP y MySQL -->
+					<section data-transition="linear" data-background="#00606d">
+						<h2>MySQL + PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Ejecución SQL</h4>
+						<small>Almacenar datos de diferentes origenes. Algunas veces necesitaremos tratar los datos antes de escribirlos e interpretarlos tras su lectura.</small>
+							<br>
+
+						<pre><code>
+
+
+&lt;?php
+  $lectura = mysql_query('SELECT * WHERE nombre='María');
+  if (!$lectura) {
+    die('Consulta no válida: ' . mysql_error());
+  }
+  while($valores = mysql_fetch_assoc($lectura)){
+    echo $valores['nombre'];
+    echo $valores['apellidos'];
+    echo $valores['DNI'];
+  }
+?&gt;
+
+						</pre></code>							
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>																
+<!-- HTML -->	
 					<section data-transition="linear">
 						<h2>HTML</h2>
 						<p>Hyper Text Markup Language</p>
+
 						<div style="color:#e3e1e2;text-align: justify;">
 							<small>Lenguaje de marcado para estructurar las páginas web. Identifican el contenido a representar, pero no el como se mostrará. Tiene una estructura en árbol conocida como DOM (Document Object Model). Cada sección es un nodo del árbol.</small>
 						</div>
@@ -371,16 +526,16 @@ selector.clase {
 					
 					<section data-transition="linear">
 						<h2>JS</h2>
-						<p>JavaScript</p>
+						<p>JavaScript - Comportamiento</p>
 						<br>
 						<div style="color:#e3e1e2;text-align: justify;">
-							<small>Lenguaje interpretado por el navegador web. Nos permite cambiar el comportamiento de los objetos representados en la página.</small>
+							<small>Es un lenguaje que interpreta el navegador. Nos proporciona la posibilidad de cambiar algunos aspectos de los objetos representados, aumentando el dinamismo dentro de la página web. El navegador nos proporciona seguridad frente a algunas vulnerabilidades conocidas de JS, ejecutando el código en una <i>'sandbox'</i> y no compartiendo datos entre las páginas.</small>
 						</div>
 						<br>
 						<div style="color:#e3e1e2;text-align: justify;">
 							<h4>jQuery</h4>
-							<small>Es una librería JavaScript que nos facilita la manipulación del DOM utilizando las etiquetas HTML. <br>
-								Ademas, nos proporciona los metodos necesarios para hacer llamadas AJAX de una manera sencilla.<br>
+							<small>Es una librería JavaScript que nos facilita la manipulación del DOM de manera no intrusiva al marchado HTML. <br>
+								Ademas, nos proporciona los metodos necesarios para hacer llamadas Ajax de una manera sencilla.<br>
 							</small>
 						</div>
 
