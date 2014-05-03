@@ -272,6 +272,57 @@
 						<aside class="notes">
 						</aside>
 					</section>
+<!-- PHP Sessions -->
+					<section data-transition="linear" data-background="#00606d">
+						<h2>PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4>Sesiones y Cookies</h4>
+							<small>
+								Son utilizadas para almacenar información. <br><br>
+								Las cookies se guardan en el cliente, durante un periodo de vida largo, independientemente del servidor que le proporcione los recursos. <br><br>
+								Las variables de sesión se guardan en el servidor. Dependen de la conexión cliente-servidor. Pueden guargar mas información que las cookies. <br><br>
+								La información almacenada en las cookies puede ser manipulada manualmente por el cliente haciendo más seguras las variables de sesión. Para almacenar estructuras complejas de datos primero tendremos que serializar la información a modo de cadena.
+
+
+							</small><br>
+							<br>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- PHP Sanitización -->
+					<section data-transition="linear">
+						<h2>PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4><i>Sanitización</i></h4>
+							<small>
+								Limpiar de código malicioso. <br><br>
+								La aplicación tiene que filtrar toda la información que llegue del lado cliente. <br>
+								<i>filter_input($cadena), htmlspecialchars($cadena),  mysql_real_escape_string($query)</i>
+							</small>
+						</div>
+						<br>
+<!-- 						<pre><code>
+&lt;?php
+  mysql_real_escape_string($query);
+  htmlspecialchars($cadena);
+?&gt;
+
+						</code></pre> -->
+						<img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="">
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
 <!-- Conexion PHP y MySQL -->
 					<section data-transition="linear" data-background="#00606d">
 						<h2>MySQL + PHP</h2>
@@ -316,10 +367,10 @@
   //Leer - Read
   $lectura = mysql_query("SELECT campo FROM tabla WHERE campo_1 = valor");
   //Actualizar - Update
-  $lectura = mysql_query("UPDATE tabla SET campo_1 = 'valor' 
+  $actualizacion = mysql_query("UPDATE tabla SET campo_1 = 'valor' 
     WHERE condicion");
   //Eliminar - Destroy
-  $lectura = mysql_query("DELETE FROM table WHERE condicion LIMIT 1");
+  $borrar = mysql_query("DELETE FROM table WHERE condicion LIMIT 1");
 ?&gt;
 
 						</pre></code>							
