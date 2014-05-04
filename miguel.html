@@ -599,37 +599,299 @@ selector.clase {
 						</aside>
 					</section>
 				</section>
+<!-- Comienzo aplicación pratica -->				
+				<section data-transition="linear" data-background="#8c4738">
+					<section>
+						<h1>Aplicación pratica</h1>
+						<hr>
 
-					<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">				
-						<h2>TITULO</h2>
-						<br>
-						<p>
-						</p>
-						<p>
-						</p>					
-						<p>
-						</p>
+					</section>
+					<section data-background="#6a2a1a">
+						<h2>Estrucutura</h2>
+
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Modulos</h4>
+						<ul>
+							<li class="fragment">Gestión de usuarios <br><small>  Alta, grupos, consulta de calificaciones.</small></li>
+							<li class="fragment">Creación de cuestiones <br><small>Enunciados, respuestas, ponderación.</small></li>
+							<li class="fragment">Generación de tests <br><small>Número de preguntas, validez, aletoriedad.</small></li>
+							<li class="fragment">Realización del test<br><small>Duración, respuestas correctas, puntuación.</small></li>
+						</ul>
+						</div>
 						<hr>
 						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
 							Miguel Ángel Paniagua García-Baquero
 						</small>
 						<aside class="notes">
-							Comenzamos
+							 Formación online, formación presencial, Evaluación
 						</aside>
 					</section>
-				<section>
-					<h1>Base Teorica</h1>
-					<hr>
-					<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
-						Miguel Ángel Paniagua García-Baquero
-					</small>
-				</section>
-				<section>
-					<h1>Practica</h1>
-					<hr>
-					<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
-						Miguel Ángel Paniagua García-Baquero
-					</small>
+<!-- Gestion de usuarios -->
+					<section >
+						<h2>Gestión de usuarios</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Perfiles</h4>
+						<small>
+							Se han creado dos tipos de perfil: <br>
+							<ul>
+								<li>Adminsitradores</li>
+								<li>Alumnos</li>
+							</ul>
+						</small>
+						<br>
+						<br>
+						<h4>Alta</h4>
+						<small>Los alumnos se podrán dar de alta de manera individual completando un formulario o de manera masiva a partir de las hojas de calculo que provee los servicios administrativos de la UAH.</small>
+						<br>
+						<br>
+						<h4>Edición</h4>
+						<small>Se podrán modificar datos de los alumnos tras su alta en la aplicación de manera individual y asignarlos a grupos.</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Gestion de usuarios Edicion-->
+					<section data-background="#6a2a1a">
+						<h2>Gestión de usuarios</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Alta / Edición de un usuario</h4>
+						</div>
+						<img src="images/usuario_editar.png" alt="Edición de usuarios">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>Tras guardar el usuario se actualiza la tabla Alumnos con estos nuevos valores.</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>					
+<!-- Gestion de usuarios Grupos-->
+					<section>
+						<h2>Gestión de usuarios</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Grupos</h4>
+						</div>
+						<img src="images/grupo_usuarios.png" alt="Gestión de grupos">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>La relación Alumnos-Grupos es muchos a muchos.</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>					
+<!-- Creación de cuestiones -->
+					<section data-background="#6a2a1a">
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+							<h4>Creación de una asignatura</h4>
+						</div>
+						<img src="images/def1.png" alt="" style="box-shadow:none;background: none; border: 0;">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<br>
+						<small>
+							Antes de crear una cuestión tenemos que crear una asignatura en la aplicación. Al crear una asignatura tendremos que completar los temas que se recogen en la asignaturas y los conceptos que abarcan estos temas, construyendo el temario de la asignatura. Tras completar el temario, se crearán todas las tablas necesarias en la base de datos.
+						</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Creación de cuestiones -->
+					<section>
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Estructura</h4>
+						<small>Cada cuestión tiene la siguiente estructura: <br><br>
+						<ul>
+							<li>Enunciado.</li>
+							<li>Imagen principal - opcional</li>
+							<li>Imagen secundaria - opcional</li>
+							<li>Respuestas.</li>
+						</ul>
+						</small>
+						<br>
+						<br>
+						<small>
+							El enuciado de la cuestión recogerá el texto de la pregunta, pudiendo contener expresiones matematicas representadas mediantes sintaxis LaTeX. Las imágenes tendrán un identificador secundario dentro de la cuestión. Cada respuesta tendra un valor porcentual dentro de la cuestión, siendo obligatorio que al menos una de ellas sea marcada como respuesta correcta.
+						</small>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Creación de cuestiones MathJax -->
+					<section data-background="#6a2a1a">
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Expresiones matemáticas</h4>
+						<small>No utilizamos imágenes creadas en otra aplicación. Utilizamos MathJax. MathJax es una libreria javascript que reemplaza la expresión matematica escrita en LaTeX por las imágenes necesarias. Para que la libreria pueda identificar que sustituir tenemos que rodear la expresión por un simbolo dolar <i>$</i> si deseamos que este dentro del texto o por dos simbolos dolar <i>$$</i> si queremos que aprarezca en un parrafo a parte. Por ejemplo,<br><br>
+						</small>
+						<pre><code>$$\sqrt{3x-1}+(1+x)^2$$</code></pre>
+						$$\sqrt{3x-1}+(1+x)^2$$
+						<br>
+						
+						<small>
+							Tambien podemos introducir la expresión dentro del parrafo, por ejemplo $\alpha = \omega^2 + 1$, pudiendo añadir así respuestas con expresiones mátematicas. Todo el enunciado, incluyendo la expresión matematica se guardará en un único campo.
+						</small>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+<!-- Creación de cuestiones Respuestas -->
+					<section>
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Respuestas</h4>
+						</div>
+						<img src="images/respuesta_edit.png" alt="">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							Las respuestas pueden ser consideradas como correctas o incorrectas. Pero la ponderación de la respuesta será un valor entero que sera tomado como porcentual. Puede ser negativo a positivo. Por defecto, mediante javascript, el valor de la pregunta incorrecta es -33% y la correcta 100%.						
+						</small>
+						</div>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Creación de cuestiones Conceptos -->
+					<section data-background="#6a2a1a">
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Asignación de Conceptos</h4>
+						</div>
+							<img src="images/concepto_asignacion.png" alt="">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							Asignaremos los conceptos relacionados a la cuestión.
+						</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Examenes -->
+					<section>
+						<h2>Exámenes</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>¿Qué preguntar?</h4>
+						</div>
+						<img src="images/examen_elegir.png" alt="">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							Selección de conceptos, nombre de la prueba, respuestas en orden aleatorio, cuántas preguntas por prueba, duración, intentos.
+						</small>
+						</div>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+<!-- Examenes -->
+					<section data-background="#6a2a1a">
+						<h2>Exámenes</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>¿Qué se preguntará?</h4>
+						</div>
+						<img src="images/examen_detalle.png" alt="">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							La prueba se asigna a un grupo de alumnos. Tiene un periodo de validez. El resultado se presenta al final de la prueba.
+						</small>
+						</div>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Examenes -->
+					<section>
+						<h2>Exámenes</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Prueba tipo test</h4>
+						</div>
+						<img src="images/examen_instrucciones.png" alt="instrucciones del examen">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							Se muestran los criterios de evaluación de la prueba. El alumno debe de validar la lectura.
+						</small>
+						</div>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Examenes -->
+					<section data-background="#6a2a1a">
+						<h2>Exámenes</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Test</h4>
+						</div>
+						<img src="images/examen_tiempo.png" alt="tiempo del examen">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							En todo momento se presenta en pantalla el tiempo restante de la prueba, y la identificación del alumno.
+						</small>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Fin de aplicación practica -->					
 				</section>
 				<section>
 					<h1>Conclusiones</h1>
@@ -668,6 +930,11 @@ selector.clase {
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
+    			math: {
+        			mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        			config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+    			},
+
 				// Parallax scrolling
 /*				parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
 				parallaxBackgroundSize: '2100px 900px',*/
@@ -679,7 +946,10 @@ selector.clase {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					// MathJax
+			        { src: 'plugin/math/math.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+
 				]
 			});
 
