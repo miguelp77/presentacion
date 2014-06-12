@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Gestor de exámenes tipo test bajo un entorno LAMP</title>
+
+		<meta name="description" content="Presentacioón trabajo fin de carrera">
+		<meta name="author" content="Miguel Paniagua">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+<link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AL+HAAC/hwAAv4cAAL+HADS/hwCAv4cAwL+HAO2/hwDtv4cAwL+HAIC/hwA0v4cAAL+HAAC/hwAA////AP///wC/hwAAv4cAAL+HAGe/hwDVv4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA1b+HAGe/hwAAv4cAAP///wD///8Av4cAAL+HAGe/hwDxv4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwDxv4cAZ7+HAAD///8A////AL+HADS/hwDVv4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HANW/hwA0////AP///wC/hwCAv4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cAgP///wD///8Av4cAwL+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAMD///8A////AL+HAO2/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwDt////AP///wC/hwDtv4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA7f///wD///8Av4cAwL+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAMD///8A////AL+HAIC/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwCA////AP///wC/hwA0v4cA1b+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwDVv4cANP///wD///8Av4cAAL+HAGe/hwDxv4cA/7+HAP+/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwDxv4cAZ7+HAAD///8A////AL+HAAC/hwAAv4cAZ7+HANW/hwD/v4cA/7+HAP+/hwD/v4cA/7+HAP+/hwDVv4cAZ7+HAAC/hwAA////AP///wC/hwAAv4cAAL+HAAC/hwA0v4cAgL+HAMC/hwDtv4cA7b+HAMC/hwCAv4cANL+HAAC/hwAAv4cAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAPgfAADwDwAA4AcAAMADAACAAQAAgAEAAIABAACAAQAAgAEAAIABAADAAwAA4AcAAPAPAAD4HwAA//8AAA==" rel="icon" type="image/x-icon" />
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="comienzo">
+					<h1>Trabajo Fin de Carrera</h1>
+					<hr>
+					<h3>Gestor de exámenes tipo test vía web <br>bajo un entorno LAMP</h3>
+					<hr>
+					<br>
+					<p>
+						<small>Director: D. Hilario Gómez Moreno</small><br>
+						<small>Alumno: Miguel Ángel Paniagua García-Baquero</small><br>
+						<br>
+						<br>
+						<small>Escuela Politécnica de Alcalá de Henares, XX de mayo de 2014</small>
+					</p>
+				</section>
+
+
+
+				<section>
+					<h2>Agenda</h2>
+					<br>
+					<ol>
+						<li>Introducción</li>
+						<li>Base Teórica</li>
+						<li>Implantación Práctica</li>
+						<li>Conclusiones</li>
+					</ol>
+					<br>
+					<br>
+					<br>
+					<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+					<hr>
+						Miguel Ángel Paniagua García-Baquero
+					</small>
+					<aside class="notes">
+						Comenzamos
+					</aside>
+				</section>
+
+
+				<section data-background="#8c4738">
+					
+					<section>
+						<h1>Introducción</h1>
+						<hr>
+					</section>
+					
+					<section>
+						<h2>Introducción</h2>
+						<br>
+						<ul style="color:#e3e1e2;">
+							<li>Crecimiento del acceso a Internet<br>
+								<small class="fragment roll-in">Las tarifas para el acceso a Internet son más asequibles.<br>El número de dispositivos con acceso es mayor. Ordenador, televisor, consolas, telefonos... </small>
+							</li>
+							<br>
+							<li>Evolución de los navegadores<br>
+								<small class="fragment roll-in">Los navegadores han evolucionado de ser aplicaciones desde donde consultar información con imágenes a ser el escenario desde donde podemos acceder a todo tipo de contenido. Siendo capaces de reproducir distintos formatos de representación.</small>
+							<br />
+							<li>Interacción Usuario-Web<br>
+								<small class="fragment roll-in">Inicialmente solo se compartían datos. Desde la llegada de la web 2.0 no solo se consume datos estáticos. Ahora, podemos consultar datos en función a los datos que nosotros introducimos.</small></li>
+							<br>
+						</ul>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							El acceso a Internet es fácil para una amplia mayoria debido al abaratamiento de las tarifas. Podemos acceder desde cualquier dispositivo con pantalla y acceso a datos. A finales de los 90 los fabricantes de software comenzaron una guerra para tener el navegador web con más usuarios.
+						</aside>
+					</section>
+		
+					<section data-transition="linear" data-background="#9A4738">
+						<h2>Introducción</h2>
+						<br>
+						<ul style="color:#e3e1e2;">
+							<li>Formación en línea<br>
+								<small class="fragment roll-in">Expansión de los MOOC.<br>Mayor número de alumnos, cada uno va a un ritmo diferente. Para comprobar el seguimiento de la asignatura se realizan preguntas durante los videos.</small>
+							</li>
+							<br>
+							<li>Formación presencial<br>
+								<small class="fragment roll-in">El temario de la asignatura se imparte a grupos en sesiones únicas. Siguiendo un orden. De manera en lo Los navegadores han evolucionado de ser aplicaciones desde donde consultar información con imágenes a ser el escenario desde donde podemos acceder a todo tipo de contenido, siendo capaces de reproducir distintos formatos de representación.</small>
+							<br />
+							<li>Evaluación<br>
+								<small class="fragment roll-in">Único examen vs conjunto de pruebas. Los exámenes tipo test permiten al profesor hacer un seguimiento de la asimilación por parte de los alumnos. Herramienta de preparación para otras pruebas.</small>
+							</li>
+							<br>							
+						</ul>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+				</section>
+
+		<!-- Base teorica -->
+
+				<section data-background="#007777">
+					<section>
+						<h1>Base Teórica</h1>
+						<hr>
+					</section>
+					
+					<section data-transition="linear" data-background="#00606d">
+						<h2>Modelo Cliente-Servidor</h2>
+						<br>
+						<img src="images/esquema.jpg" alt="cliente-servidor">
+						<p style="color:#e3e1e2; text-align:left;">El lado cliente corresponde al navegador web. <br>El lado servidor está formado por el servidor web Apache con el módulo PHP instalado y la base de datos MySQL que forman el entorno LAMP</p>
+					</section>
+
+					<section data-transition="linear">
+						<h2>Entorno LAMP</h2>
+						<br>
+						<small style="text-align: justify;">Un entorno LAMP está formado por un conjunto de distintas aplicaciones que forman el escenario para poder proporcionar servicios web.</small>
+						<br>
+						<br>
+						<ul style="color:#e3e1e2;">
+							<li>
+								Linux <br /> 
+								<small class="fragment roll-in">Sistema operativo de software libre. Distribución Ubuntu orientada al usuario medio. Gestor de paquetes que facilitan la instalación de distintas aplicaciones.</small>
+							</li>
+							<li>
+								Apache <br />
+								<small class="fragment roll-in">Servidor web de código abierto. Atiende las peticiones HTTP entre el cliente y el servidor.</small>
+							</li>
+							<li>
+								MySQL<br />
+								<small class="fragment roll-in">Base de datos relacional de software libre. Relaciones entre tablas. Muy rápida en operaciones de lectura.</small>
+							</li>
+							<li>PHP<br>
+								<small class="fragment roll-in">Perl o Python. El servidor web interpreta el código y genera una página web con el resultado.</small>
+							</li>
+						</ul>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-transition="linear" data-background="#00606d">
+						<h2>Apache+PHP+MySQL</h2>
+						<img src="images/php.png" alt="">
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+
+					<section data-transition="linear">
+						<h2>Apache+PHP+MySQL</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Estático vs Dinámico</h4>
+						<small>Las páginas web estáticas siempre devuelven el mismo resultado HTML. Las páginas web dinámicas devuelven una respuesta HTML en función de unos parámetros recibidos desde cliente o variables dentro del servidor.</small>
+						</div>
+						<br>
+						<div style="color:#d3d1d2;">
+						<small style="text-align: justify;">El contenido dinámico es generado por el script PHP apoyándose en la base de datos para leer y almacenar la información a representar. Tras terminar la interpretación del script PHP el servidor Apache devuelve el resultado al cliente en forma de página HTML.</small>
+						</div>
+						<br>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- MySQL -->
+					<section data-transition="linear" data-background="#00606d">
+						<h2>MySQL</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Base de datos</h4>
+						<small>Es una base de datos relacional. Muy rápida en la lectura, no tanto en la escritura. Continua manteniendo licencia GNU GPL.</small><br>
+							<br>
+							<br>
+							<h4>Relaciones</h4>
+							<small>
+							Una base de datos puede tener diferentes instancias, para diferentes propósitos cada una, con varias tablas donde se estructura las relaciones de los datos guardados. Las relaciones pueden ser: <br>
+							<br>
+							<ul>
+								<li><b>Uno a uno</b><span class="fragment"> - Un examen pertenece a un alumno</span></li>
+								<li><b>Uno a muchos</b><span class="fragment"> - Un pregunta tiene varias respuestas</span></li>
+								<li><b>Muchos a muchos</b><span class="fragment"> - Varios alumnos pertenecen a varios grupos</span></li>
+							</ul> 
+						</small>
+						</div>
+						<br>
+						<div style="color:#d3d1d2;">
+						<small style="text-align: justify;"></small>
+						</div>
+						<br>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- PHP -->
+					<section data-transition="linear">
+						<h2>PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4>Lenguaje de programación</h4>
+							<small>Lenguaje de programación interpretado. Software libre, no GNU. Diseñado para la programación web representando su resultado en HTML. Posibilidad de trabajar con datos de distintos motores de base de datos. Proporciona lógica a la aplicación.</small><br>
+							<br>
+						</div>
+						<div class="fragment">
+							<h4 style="text-align: justify;">Sintaxis</h4>
+							
+						<pre><code>
+&lt;div&gt;
+  &lt;?php
+    //Variables
+    $a = 1;
+    $b = 2;
+    echo $a + $b;
+  ?&gt;
+&lt;div&gt;							
+						</pre></code>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- PHP Sessions -->
+					<section data-transition="linear" data-background="#00606d">
+						<h2>PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4>Sesiones y Cookies</h4>
+							<small>
+								Son utilizadas para almacenar información. <br><br>
+								Las cookies se guardan en el cliente, durante un periodo de vida largo, independientemente del servidor que le proporcione los recursos. <br><br>
+								Las variables de sesión se guardan en el servidor, dependen de la conexión cliente-servidor y Pueden guargar mas información que las cookies. <br><br>
+								La información almacenada en las cookies puede ser manipulada manualmente por el cliente, haciendo más seguras las variables de sesión. Para almacenar estructuras complejas de datos primero tendremos que serializar la información a modo de cadena.
+
+
+							</small><br>
+							<br>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- PHP Sanitización -->
+					<section data-transition="linear">
+						<h2>PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4><i>Sanitización</i></h4>
+							<small>
+								Limpiar de código malicioso. <br><br>
+								La aplicación tiene que filtrar toda la información que llegue del lado cliente. <br>
+								<i>filter_input($cadena), htmlspecialchars($cadena),  mysql_real_escape_string($query)</i>
+							</small>
+						</div>
+						<br>
+<!-- 						<pre><code>
+&lt;?php
+  mysql_real_escape_string($query);
+  htmlspecialchars($cadena);
+?&gt;
+
+						</code></pre> -->
+						<img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="">
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- Conexion PHP y MySQL -->
+					<section data-transition="linear" data-background="#00606d">
+						<h2>MySQL + PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Trabajar con datos</h4>
+						<small>Almacenar datos de diferentes orígenes. Algunas veces necesitaremos tratar los datos antes de escribirlos e interpretarlos tras su lectura.</small>
+							<br>
+							<br>
+							<h4>Conexión</h4>
+						<pre><code>
+&lt;?php
+  $recurso = mysql_connect('servidor','usario','contraseña');
+?&gt;
+
+						</pre></code>							
+						</div>
+						<br>
+						<div style="color:#d3d1d2;">
+						<small style="text-align: justify;"></small>
+						</div>
+						<br>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- OperacionesPHP y MySQL -->
+					<section data-transition="linear">
+						<h2>MySQL + PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Operaciones CRUD</h4>
+						<small>Para operar con la base de datos utilizamos la sintaxis SQL. El comando mysql_query es fundamental para trabajar con MySQL. Las operaiones básicas serán: </small>
+						<br>
+						<pre><code>
+&lt;?php
+  //Escribir - Create
+  $escritura = mysql_query("INSERT INTO tabla (campo_1, campo_2) 
+    VALUES ('valor_1','valor_2')"); // Comillas simples para los valores
+  //Leer - Read
+  $lectura = mysql_query("SELECT campo FROM tabla WHERE campo_1 = valor");
+  //Actualizar - Update
+  $actualizacion = mysql_query("UPDATE tabla SET campo_1 = 'valor' 
+    WHERE condicion");
+  //Eliminar - Destroy
+  $borrar = mysql_query("DELETE FROM table WHERE condicion LIMIT 1");
+?&gt;
+
+						</pre></code>							
+						</div>
+					
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>
+<!-- Ejecucion PHP y MySQL -->
+					<section data-transition="linear" data-background="#00606d">
+						<h2>MySQL + PHP</h2>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Ejecución SQL</h4>
+						<small>Almacenar datos de diferentes orígenes. Algunas veces necesitaremos tratar los datos antes de escribirlos e interpretarlos tras su lectura.</small>
+							<br>
+
+						<pre><code>
+
+
+&lt;?php
+  $lectura = mysql_query('SELECT * WHERE nombre='María');
+  if (!$lectura) {
+    die('Consulta no válida: ' . mysql_error());
+  }
+  while($valores = mysql_fetch_assoc($lectura)){
+    echo $valores['nombre'];
+    echo $valores['apellidos'];
+    echo $valores['DNI'];
+  }
+?&gt;
+						</pre></code>							
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+						</aside>
+					</section>																
+<!-- HTML -->	
+					<section data-transition="linear">
+						<h2>HTML</h2>
+						<p>Hyper Text Markup Language</p>
+
+						<div style="color:#e3e1e2;text-align: justify;">
+							<small>Lenguaje de marcado para estructurar las páginas web. Identifican el contenido a representar, pero no el cómo se mostrará. Tiene una estructura en árbol conocida como DOM (Document Object Model). Cada sección es un nodo del árbol.</small>
+						</div>
+						<br>
+						<div class="fragment" style="color:#d3d1d2;text-align: justify;">
+						<h4>Estructura</h4>
+						<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    <meta charset="UTF-8">
+    <title>Titulo</title>
+  &lt;/head&gt;
+  &lt;body&gt;
+   &lt;!-- Comentario --&gt;
+   		Contenido
+  &lt;/body&gt;
+&lt;/html&gt; 
+						</code></pre>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+					<section data-transition="linear" data-background="#00606d">
+						<h2>HTML</h2>
+						<p>Hyper Text Markup Language</p>
+						
+						<br>
+						<div style="color:#d3d1d2;text-align: justify;">
+						<h4>Elementos (Etiquetas)</h4>
+						<pre><code>
+  &lt;head&gt;
+    <meta charset="UTF-8">
+    <title>Titulo</title>
+  &lt;/head&gt;
+						</code></pre>
+						<small>Elemento &lt;head&gt; conteniendo los elementos &lt;meta&gt; y &lt;title&gt;</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+					<section data-transition="linear">
+						<h2>HTML</h2>
+						<p>Hyper Text Markup Language</p>
+						
+						<br>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4>Atributos</h4>
+							<pre><code>
+  &lt;div id="identificador_unico" class="nombre de la clases"&gt;
+    <img src="ruta/imagen.jpg" alt="Texto alternativo">
+    <p>Parrafo</p>
+  &lt;/div&gt;
+							</code></pre>
+							<div>
+										
+								<small>Los elementos tienen varios atributos para poder identificarlos dentro del árbol DOM. El atributo <b style="color:#ffffff;">id</b> tiene que ser único dentro del documento. El atributo <b style="color:#ffffff;">class</b> especifica el tipo de clase de la etiqueta para la hoja de estilos.
+								</small>
+							</div>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							Notas
+						</aside>
+					</section>
+
+					<section data-transition="linear" data-background="#00606d">
+						<h2>HTML</h2>
+						<p>Hyper Text Markup Language</p>
+				
+						<br>
+						<div style="color:#d3d1d2;">
+							<img width="50%" src="images/one_way.jpg" alt="">
+							<p>No siempre hay una sola dirección.</p>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Notas
+						</aside>
+					</section>
+
+					<section data-transition="linear">
+						<h2>CSS</h2>
+						<p>Cascading Style Sheets</p>
+						<div style="color:#e3e1e2;text-align: justify;">
+							<small>Hojas de estilo. Indican como se van a mostrar los elementos que forman el HTML. Se pueden declarar en archivos externos, indicando la ruta en la cabecera del documento. De manera puntual podemos cambiar algún parametro con el atributo <b style="color:#ffffff;">style</b> dentro del código HTML.</small>
+						</div>
+						<br>
+						<div class="fragment" style="color:#d3d1d2;text-align: justify;">
+							<h4>Ejemplo</h4>
+							<pre><code>
+ p.verde {color:white;text-align:center;background-color:#007700;}
+							</code></pre>
+							<div>
+								<small>Las etiquetas &lt;p&gt; de la clase verde dentro del documento HTML tendran color de la fuente blanco y fondo verde.</small>
+							</div>
+							<br>
+							<blockquote style="color:white;text-align:center;background-color:#007700;">Ejemplo</blockquote>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+					<section data-transition="linear" data-background="#00606d">
+						<h2>CSS</h2>
+						<p>Cascadind Style Sheets</p>
+						<div style="color:#d3d1d2;text-align: justify;">
+							<h4>Sintaxis</h4>
+							<pre><code>
+selector.clase {
+	propiedad: valor;
+	propiedad: valor;
+}
+							</code></pre>
+						<br>
+							<small>
+							<i style="color:#ffffff;">selector</i> identifica al elemento HTML que va a modificar. El carácter ' <b style="color:#ffffff;">.</b> ' señala que se va nombrar un tipo de clase. <br>
+							Entre llaves <b style="color:#ffffff;">{ ... }</b> y separados por ' <b style="color:#ffffff;">;</b> ' se enumeran las propiedades que se modificarán y los valores que tomarán cuando el navegador muestre el HTML. <br>
+							Se pueden modficar todo tipo de parámetros. Fuente, color de fondo, referencia de posición, redondear esquinas de las cajas... <br>Mas información en: <a href="https://developer.mozilla.org/es/docs/CSS/Introducci%C3%B3n">Developer Mozilla - Introducción a CSS.</a> 
+							</small>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+					
+					<section data-transition="linear">
+						<h2>JS</h2>
+						<p>JavaScript - Comportamiento</p>
+						<br>
+						<div style="color:#e3e1e2;text-align: justify;">
+							<small>Es un lenguaje que interpreta el navegador. Nos proporciona la posibilidad de cambiar algunos aspectos de los objetos representados, aumentando el dinamismo dentro de la página web. El navegador nos proporciona seguridad frente a algunas vulnerabilidades conocidas de JS, ejecutando el código en una <i>'sandbox'</i> y no compartiendo datos entre las páginas.</small>
+						</div>
+						<br>
+						<div style="color:#e3e1e2;text-align: justify;">
+							<h4>jQuery</h4>
+							<small>Es una librería JavaScript que nos facilita la manipulación del DOM de manera no intrusiva al marcado HTML. <br>
+								Ademas, nos proporciona los métodos necesarios para hacer llamadas Ajax de una manera sencilla.<br>
+							</small>
+						</div>
+
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+				</section>
+<!-- Comienzo aplicación pratica -->				
+				<section data-transition="linear" data-background="#8c4738">
+					<section>
+						<h1>Aplicación prática</h1>
+						<hr>
+
+					</section>
+					<section data-background="#6a2a1a">
+						<h2>Estructura</h2>
+
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Módulos</h4>
+						<ul>
+							<li class="fragment">Gestión de usuarios <br><small>  Alta, grupos, consulta de calificaciones.</small></li>
+							<li class="fragment">Creación de cuestiones <br><small>Enunciados, respuestas, ponderación.</small></li>
+							<li class="fragment">Generación de tests <br><small>Número de preguntas, validez, aletoriedad.</small></li>
+							<li class="fragment">Realización del test<br><small>Duración, respuestas correctas, puntuación.</small></li>
+						</ul>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Gestion de usuarios -->
+					<section >
+						<h2>Gestión de usuarios</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Perfiles</h4>
+						<small>
+							Se han creado dos tipos de perfil: <br>
+							<ul>
+								<li>Administradores</li>
+								<li>Alumnos</li>
+							</ul>
+						</small>
+						<br>
+						<br>
+						<h4>Alta</h4>
+						<small>Los alumnos se podrán dar de alta de manera individual completando un formulario o de manera masiva a partir de las hojas de calculo que provee los servicios administrativos de la UAH.</small>
+						<br>
+						<br>
+						<h4>Edición</h4>
+						<small>Se podrán modificar datos de los alumnos tras su alta en la aplicación de manera individual y asignarlos a grupos.</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Gestion de usuarios Edicion-->
+					<section data-background="#6a2a1a">
+						<h2>Gestión de usuarios</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Alta / Edición de un usuario</h4>
+						</div>
+						<img src="images/usuario_editar.png" alt="Edición de usuarios">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>Tras guardar el usuario se actualiza la tabla Alumnos con estos nuevos valores.</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>					
+<!-- Gestion de usuarios Grupos-->
+					<section>
+						<h2>Gestión de usuarios</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Grupos</h4>
+						</div>
+						<img src="images/grupo_usuarios.png" alt="Gestión de grupos">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>La relación Alumnos-Grupos es de muchos a muchos.</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>					
+<!-- Creación de cuestiones -->
+					<section data-background="#6a2a1a">
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+							<h4>Creación de una asignatura</h4>
+						</div>
+						<img src="images/def1.png" alt="" style="box-shadow:none;background: none; border: 0;">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<br>
+						<small>
+							Antes de crear una cuestión tenemos que crear una asignatura en la aplicación. Al crear una asignatura tendremos que completar los temas que se recogen en la asignaturas y los conceptos que abarcan estos temas, construyendo el temario de la asignatura. Tras completar el temario, se crearán todas las tablas necesarias en la base de datos.
+						</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Creación de cuestiones -->
+					<section>
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Estructura</h4>
+						<small>Cada cuestión tiene la siguiente estructura: <br><br>
+						<ul>
+							<li>Enunciado.</li>
+							<li>Imagen principal - opcional</li>
+							<li>Imagen secundaria - opcional</li>
+							<li>Respuestas.</li>
+						</ul>
+						</small>
+						<br>
+						<br>
+						<small>
+							El enunciado de la cuestión recogerá el texto de la pregunta, pudiendo contener expresiones matemáticas representadas mediantes sintaxis LaTeX. Las imágenes tendrán un identificador secundario dentro de la cuestión. Cada respuesta tendra un valor porcentual dentro de la cuestión, siendo obligatorio que al menos una de ellas sea marcada como respuesta correcta.
+						</small>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Creación de cuestiones MathJax -->
+					<section data-background="#6a2a1a">
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Expresiones matemáticas</h4>
+						<small>No utilizamos imágenes creadas en otra aplicación. Utilizamos MathJax. MathJax es una librería javascript que reemplaza la expresión matemática escrita en LaTeX por las imágenes necesarias. Para que la librería pueda identificar que sustituir tenemos que rodear la expresión por un símbolo dolar <i>$</i> si deseamos que este dentro del texto o por dos símbolos dolar <i>$$</i> si queremos que aparezca en un párrafo a parte. Por ejemplo,<br><br>
+						</small>
+						<pre><code>$$\sqrt{3x-1}+(1+x)^2$$</code></pre>
+						$$\sqrt{3x-1}+(1+x)^2$$
+						<br>
+						
+						<small>
+							También podemos introducir la expresión dentro del párrafo, por ejemplo $\alpha = \omega^2 + 1$, pudiendo añadir así respuestas con expresiones matemáticas. Todo el enunciado, incluyendo la expresión matemática se guardará en un único campo.
+						</small>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+<!-- Creación de cuestiones Respuestas -->
+					<section>
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Respuestas</h4>
+						</div>
+						<img src="images/respuesta_edit.png" alt="">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							Las respuestas pueden ser consideradas como correctas o incorrectas. Pero la ponderación de la respuesta será un valor entero que será tomado como porcentual. Puede ser negativo a positivo. Por defecto, mediante javascript, el valor de la pregunta incorrecta es -33% y la correcta 100%.						
+						</small>
+						</div>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Creación de cuestiones Conceptos -->
+					<section data-background="#6a2a1a">
+						<h2>Cuestiones</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Asignación de Conceptos</h4>
+						</div>
+							<img src="images/concepto_asignacion.png" alt="">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							Asignaremos los conceptos relacionados a la cuestión.
+						</small>
+						</div>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Examenes -->
+					<section>
+						<h2>Exámenes</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>¿Qué preguntar?</h4>
+						</div>
+						<img src="images/examen_elegir.png" alt="">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							Selección de conceptos, nombre de la prueba, respuestas en orden aleatorio, cuántas preguntas por prueba, duración, intentos.
+						</small>
+						</div>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+
+<!-- Examenes -->
+					<section data-background="#6a2a1a">
+						<h2>Exámenes</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>¿Qué se preguntará?</h4>
+						</div>
+						<img src="images/examen_detalle.png" alt="">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							La prueba se asigna a un grupo de alumnos. Tiene un período de validez. El resultado se presenta al final de la prueba.
+						</small>
+						</div>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Examenes -->
+					<section>
+						<h2>Exámenes</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Prueba tipo test</h4>
+						</div>
+						<img src="images/examen_instrucciones.png" alt="instrucciones del examen">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							Se muestran los criterios de evaluación de la prueba. El alumno debe de validar la lectura.
+						</small>
+						</div>
+
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Examenes -->
+					<section data-background="#6a2a1a">
+						<h2>Exámenes</h2>
+						<div style="color:#e3e1e2;text-align: justify;">
+						<h4>Test</h4>
+						</div>
+						<img src="images/examen_tiempo.png" alt="tiempo del examen">
+						<div style="color:#e3e1e2;text-align: justify;">
+						<small>
+							En todo momento se presenta en pantalla el tiempo restante de la prueba y la identificación del alumno.
+						</small>
+						</div>
+						<br>
+						<hr>
+						<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+							Miguel Ángel Paniagua García-Baquero
+						</small>
+						<aside class="notes">
+							 Formación online, formación presencial, Evaluación
+						</aside>
+					</section>
+<!-- Fin de aplicación practica -->					
+				</section>
+				<section>
+					<h1>Conclusiones</h1>
+					<small>
+							La aplicación nos ha proporcionado una solución a los retos planteados en la modificación del proyecto anterior. Para ello, no hemos podido utilizar partes del proyecto anterior, ya que hemos introducido nuevas funcionalidades y habría que haber escrito de nuevo todo forzando el juego de caracteres UTF-8 y adaptando la representación a un formato exportable como PDF. También se ha eliminado la restricción de poder acceder a la aplicación desde una red exterior al servidor, en la cual se ha instalado pudiéndose acceder a ella desde cualquier navegador si el servidor en el que hemos instalado la aplicación tiene una dirección pública.
+	Aprovechando la modificación hemos desarrollado una nueva interfaz empleando estándares actuales y tecnologías abiertas para facilitar la administración y elaboración de los exámenes por parte de los profesores de las asignaturas. Utilizando estos estándares en la interfaz buscamos que el comportamiento sea el mismo, independientemente del navegador utilizado. La otra ventaja del uso de estándares, es que la modificación de la aplicación resultará más fácil con unos conocimientos básicos de PHP, CSS y JavaScript.
+	Por otro lado, la aplicación no presenta la restricción de utilizarse para una única asignatura. Desde la propia aplicación gestionaremos tantas asignaturas como sean necesarias pudiendo crear cuestiones que podamos compartir y exámenes para cada una de ellas.
+	Una de las mejoras que se puede desarrollar a partir del proyecto es modificarlo de nuevo utilizando un “framework” como Symfony2, Cake o Zend. No se utilizaron inicialmente, al requerir un conocimiento de las particularidades de estos para realizar todo el modelado de la aplicación. Las ventajas que nos ofrecerían sería más a la hora de estructurar el código para su posterior utilización en otras aplicaciones, que funcionales.
+ 
+					</small>
+					<hr>
+					<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+						Miguel Ángel Paniagua García-Baquero
+					</small>
+				</section>
+
+				<section>
+					<h1>¿Preguntas?</h1>
+					<hr>
+					<small id="footer" style="width:100%; position:absolute; right:0.1em; text-align: right; margin:0.1em 0.4em;">
+						Miguel Ángel Paniagua García-Baquero
+					</small>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    			math: {
+        			mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        			config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+    			},
+
+				// Parallax scrolling
+/*				parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				parallaxBackgroundSize: '2100px 900px',*/
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					// MathJax
+			        { src: 'plugin/math/math.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
