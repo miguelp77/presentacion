@@ -120,7 +120,7 @@
 							</li>
 							<br>
 							<li>Formación presencial<br>
-								<small class="fragment roll-in">El temario de la asignatura se imparte a grupos en sesiones únicas. Siguiendo un orden.</small>
+								<small class="fragment roll-in">El temario de la asignatura se imparte a grupos en sesiones únicas. Siguiendo un orden, adaptandose a los alumnos.</small>
 							<br />
 							<li>Evaluación<br>
 								<small class="fragment roll-in">Único examen vs conjunto de pruebas. Los exámenes tipo test permiten al profesor hacer un seguimiento de la asimilación por parte de los alumnos. Herramienta de preparación para otras pruebas.</small>
@@ -284,8 +284,8 @@
 							<small>
 								Son utilizadas para almacenar información. <br><br>
 								Las cookies se guardan en el cliente, durante un periodo de vida largo, independientemente del servidor que le proporcione los recursos. <br><br>
-								Las variables de sesión se guardan en el servidor, dependen de la conexión cliente-servidor y Pueden guargar mas información que las cookies. <br><br>
-								La información almacenada en las cookies puede ser manipulada manualmente por el cliente, haciendo más seguras las variables de sesión. Para almacenar estructuras complejas de datos primero tendremos que serializar la información a modo de cadena.
+								Las variables de sesión se guardan en el servidor, dependen de la conexión cliente-servidor y pueden guargar mas información que las cookies. <br><br>
+								La información almacenada en las cookies puede ser manipulada manualmente por el cliente, siendo más seguras las variables de sesión. Para almacenar estructuras complejas de datos primero tendremos que serializar la información a modo de cadena.
 
 
 							</small><br>
